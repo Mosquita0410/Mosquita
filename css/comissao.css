@@ -1,0 +1,440 @@
+/* Resets básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Platino', serif;
+  min-height: 100vh;
+}
+
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  border-bottom: 1px solid #1a1a1a;
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #72a896;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 2px;
+}
+
+.star {
+  font-size: 1.5rem;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  filter: grayscale(0%); 
+  opacity: 1;
+  transform: scale(1.03); 
+  cursor: pointer;
+
+}
+
+.nav-links a {
+  color: #72a896;
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+  
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  animation: fade-in-entrada 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fade-in-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1. ETAPAS (PASSO A PASSO) */
+.etapas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.etapa-card {
+  border-right: 1px solid #222;
+  padding-right: 15px;
+}
+
+.etapa-card:last-child {
+  border-right: none;
+}
+
+.etapa-num {
+  font-size: 2rem;
+  color: #72a896;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.etapa-titulo {
+  font-size: 1.4rem;
+  color: #72a896;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.etapa-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #cccccc;
+}
+
+/* 2. TRABALHOS RECENTES */
+.secao-trabalhos {
+  margin-bottom: 60px;
+}
+
+.secao-titulo-verde {
+  color: #72a896;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.secao-titulo-verde-grande {
+  color: #72a896;
+  font-size: 3rem;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.img-grid {
+ width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: filter 0.4s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+ .img-grid:hover {
+filter: grayscale(0%); 
+  opacity: 1;
+  transform: scale(1.03); 
+  cursor: pointer;
+}
+
+/* 3. COMISSÃO / CARDS DE PREÇO */
+.secao-precos {
+  margin-bottom: 60px;
+}
+
+.cards-precos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #222;
+  margin-bottom: 15px;
+}
+
+.card-preco {
+  border-right: 1px solid #222;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: transparent;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-preco:hover {
+  transform: translateY(-6px); 
+  background-color: #08120e; 
+  border-color: #72a896; 
+  box-shadow: 0px 8px 20px rgba(114, 168, 150, 0.2); 
+  z-index: 2; 
+}
+
+.card-preco:hover .card-num {
+  color: #72a896;
+}
+
+.card-preco:hover .tag-digital {
+  border-color: #72a896;
+  color: #ffffff;
+}
+
+.card-preco:last-child {
+  border-right: none;
+}
+
+.card-num {
+  font-size: 2rem;
+  color: #333;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card-preco h3 {
+  font-size: 1.3rem;
+  color: #72a896;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #aaaaaa;
+  margin-bottom: 20px;
+}
+
+.tag-digital {
+  display: inline-block;
+  border: 1px solid #333;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: #888;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.card-rodape {
+  border-top: 1px solid #222;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.85rem;
+}
+
+.card-rodape .label {
+  display: block;
+  color: #666;
+}
+
+.card-rodape strong {
+  color: #fff;
+}
+
+.valor {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.obs-valores {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.secao-contato {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 60px;
+  gap: 30px;
+}
+
+.contato-col-esquerda {
+  flex: 1;
+}
+
+.contato-texto {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #cccccc;
+  margin-bottom: 25px;
+  max-width: 400px;
+}
+
+.contatos-icones {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #72a896;
+  font-size: 1.3rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contato-item:hover {
+  transform: translateX(8px); 
+  color: #ffffff;
+}
+
+.contato-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.contato-item:hover img {
+  transform: scale(1.1); 
+}
+
+.contato-col-direita {
+  display: flex;
+  align-items: center; 
+  gap: 20px;
+  position: relative;
+}
+
+.balao-fala {
+  border: 2px solid #72a896;
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px; 
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #72a896;
+  position: relative;
+  background-color: #000000; 
+  flex-shrink: 0; 
+  margin-right: -20px;
+  margin-left:50px;
+  transform: translateX(30px);
+
+}
+
+
+.balao-fala::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%); 
+  border-width: 10px 0 10px 15px;
+  border-style: solid;
+  border-color: transparent transparent transparent #72a896;
+  display: block;
+  width: 0;
+}
+
+.personagem-contato {
+ width: 340px; 
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* HOME LINK */
+.home-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.home-link {
+  color: #72a896;
+  font-size: 1.6rem;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+/* RESPONSIVO PARA CELULAR */
+@media (max-width: 768px) {
+  .header-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .etapas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .etapa-card {
+    border-right: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+  }
+
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-precos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-preco {
+    border-right: none;
+    border-bottom: 1px solid #222;
+  }
+
+  .secao-contato {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contato-col-direita {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .balao-fala::after {
+    display: none;
+  }
+}
+  
+
+

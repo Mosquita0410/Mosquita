@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - papa_mosquita</title>
+  
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" />
+ 
+  <link rel="stylesheet" href="../css/portifolio.css">
+</head>
+<body>
+
+  <main class="portfolio-container">
+    <h1 class="portfolio-title">PORTFÓLIO</h1>
+
+    
+    <div class="galeria-portfolio">
+      <img src="../IMG/trabalho2.jpg" alt="Ilustração 2" class="img-art">
+      <img src="../IMG/trabalho3.jpg" alt="Ilustração 3" class="img-art">
+      <img src="../IMG/trabalho5.jpg" alt="Ilustração 5" class="img-art">
+      <img src="../IMG/trabalho1.jpg" alt="Ilustração 1" class="img-art">
+      <img src="../IMG/trabalho4.png" alt="Ilustração 4" class="img-art">
+    </div>
+
+    
+    <div class="links-portfolio">
+      <a href="https://cara.app/papamosquita" target="_blank" rel="noopener noreferrer" class="cara-btn">
+        CARA APP
+      </a>
+    </div>
+  </main>
+
+  <script>
+    window.addEventListener('pageshow', function(event) {
+      const container = document.querySelector('.container');
+      if (container) {
+        container.classList.remove('page-exit');
+      }
+    });
+
+
+    document.querySelectorAll('a').forEach(link => {
+      if (link.target !== '_blank' && link.getAttribute('href') && !link.getAttribute('href').startsWith('#')) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const destination = this.href;
+          
+          const container = document.querySelector('.container');
+          if (container) {
+            container.classList.add('page-exit');
+          }
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 300);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
