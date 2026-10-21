@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papa Mosquita</title>
+  <link rel="stylesheet" href="../css/style.css"> 
+</head>
+<body>
+
+
+  <main class="container">
+    <a href="secret.html" class="avatar-link" title="Clique em mim!">
+  <div class="avatar-container">
+    <img src="../IMG/avatar.jpg" alt="PAPA_MOSQUITA Avatar" class="avatar">
+  </div>
+</a>
+
+    <h1 class="username">papa_mosquita</h1>
+
+    <div class="links-container">
+      <a href="comissao.html" class="link-btn">COMISSÕES INFO</a>
+      <a href="portifolio.html" class="link-btn">PORTFÓLIO</a>
+      <a href="redes.html" class="link-btn">REDES SOCIAIS</a>
+      <a href="contato.html" class="link-btn">CONTATO</a>
+      <a href="https://whatsapp.com/channel/0029VbCVcRyLSmbX11ZKL11n" target="_blank" rel="noopener noreferrer" class="link-btn">
+    GRUPO WHATSAPP</a>
+    </div>
+
+  </main>
+
+  <script>
+
+    const redesBtn = document.querySelector('a[href*="redes"]');
+
+    if (redesBtn) {
+      redesBtn.addEventListener('click', function(e) {
+        e.preventDefault(); 
+        const destination = this.href;
+
+        document.querySelector('.container').classList.add('page-exit');
+
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 300);
+      });
+    }
+  </script>
+
+  <script>
+    window.addEventListener('pageshow', function(event) {
+      const container = document.querySelector('.container');
+      if (container) {
+        container.classList.remove('page-exit');
+      }
+    });
+
+    
+    document.querySelectorAll('a').forEach(link => {
+      if (link.target !== '_blank' && link.getAttribute('href') && !link.getAttribute('href').startsWith('#')) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const destination = this.href;
+          
+          const container = document.querySelector('.container');
+          if (container) {
+            container.classList.add('page-exit');
+          }
+
+          setTimeout(() => {
+            window.location.href = destination;
+          }, 300);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
